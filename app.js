@@ -1,4 +1,5 @@
 require('dotenv').config()
+let db =require('./models')
 var createError = require('http-errors');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -39,6 +40,11 @@ app.use('/users', usersRouter);           //define routes ..
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+// Synchronizes the database schema with the models re-sync db.
+ /* db.sequelize.sync({ force: false }).then(() => {
+    console.log("Drop and re-sync db.");
+ }); */
 
 
 app.use(function(err, req, res, next) {              // error handler
