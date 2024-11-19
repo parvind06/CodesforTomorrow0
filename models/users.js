@@ -45,6 +45,15 @@ module.exports = function (sequelize, DataTypes) {
           { name: "id" },
         ]
       }
-    ]
+    ], // creat hash of passowrd
+    hooks: {
+      beforeCreate: async (user) => {
+        if (user.password) {
+          const bcrypt = require('bcrypt');
+          const salt = await bcrypt.genSalt(10);
+          user.password = await bcrypt.hash(user.password, salt);
+        }
+      },
+    },
   });
 };
