@@ -18,24 +18,24 @@ Follow the steps below to set up the project:
 
 Run the following command to initialize a new Node.js project and generate the `package.json` file:
 
-````bash
+````
 npm init -y
 
 Step 2: Generate the Express Application
 
-```bash
+```
 npx express-generator --ejs
 
 Step 3: Install Project Dependencies
-```bash
+```
 npm install
 
 Step 4: Install Additional Packages
-```bash
+```
 npm install sequelize pg pg-hstore
 
 Step 5: Configure PostgreSQL Database
-```bash
+```
 {
     "DB_USER": "your-username",
     "DB_PASSWORD": "your-password",
@@ -46,7 +46,7 @@ Step 5: Configure PostgreSQL Database
 
 
 Step 6: Sync Sequelize Models
-```bash
+```
 In app.js, you should uncomment the following line to sync the Sequelize models with your PostgreSQL database:
 
 /*db.sequelize.sync({ force: false }).then(() => {
@@ -63,7 +63,7 @@ Ensure that JWT tokens are securely stored and handled on the client side.
 
 Conclusion
 This setup should help you get the project up and running quickly. If you encounter any issues or have questions, feel free to reach out to the project team.
-```bash
+```
 email [parvind06@gmail.com]
 
 
